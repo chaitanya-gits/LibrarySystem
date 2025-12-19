@@ -1,0 +1,43 @@
+# ================================
+# Docker Compose Override for Development
+# ================================
+# This file automatically merges with docker-compose.yml 
+# when running `docker compose up`
+
+services:
+  backend:
+    build:
+      context: ./backend
+      target: builder  # Use builder stage for faster rebuilds
+    volumes:
+      - ./backend/src:/app/src:ro  # Mount source code (read-only)
+      - ./backend/target:/app/target  # Share target directory
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DEVTOOLS_RESTART_ENABLED=true
+      - LOGGING_LEVEL_COM_ELIBRARY=DEBUG
+    ports:
+      - "8090:8080"
+      - "5005:5005"  # Debug port
+    command: >
+      ./mvnw spring-boot:run
+      -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+
+  frontend:
+    build:
+      context: ./frontend
+      target: development
+    volumes:
+      - ./frontend/src:/app/src:ro
+      - ./frontend/public:/app/public:ro
+    environment:
+      - VITE_API_URL=http://localhost:8090/api
+    ports:
+      - "3000:5173"
+    command: npm run dev -- --host
+
+  db:
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=elibrary_dev  # Simpler password for dev

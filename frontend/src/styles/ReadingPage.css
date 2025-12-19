@@ -1,0 +1,173 @@
+.reading-page {
+    background-color: #fbf3e0;
+    min-height: 100vh;
+    color: #2c2c2c;
+    font-family: 'Playfair Display', serif;
+    /* For headers */
+    display: flex;
+    flex-direction: column;
+}
+
+.reading-header {
+    height: 60px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    z-index: 100;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.back-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.reading-icon-btn {
+    background: none;
+    border: none;
+    color: #444;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.reading-icon-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.reading-content {
+    flex: 1;
+    padding-top: 100px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.reading-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.reading-book-title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.reading-book-author {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 4rem;
+}
+
+.reading-text {
+    font-family: 'Lora', serif;
+    /* Use a clean serif for body */
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.reading-text p {
+    margin-bottom: 2rem;
+}
+
+.drop-cap {
+    float: left;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 700;
+    margin-right: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.reading-divider {
+    width: 80px;
+    height: 1px;
+    background: #e2d9c1;
+    margin: 4rem auto;
+}
+
+.chapter-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.end-of-sample {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 0.1em;
+}
+
+.reading-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.buy-full-version-btn {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.buy-full-version-btn:hover {
+    background: #222;
+}
+
+.reading-footer {
+    height: 50px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #777;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .reading-book-title {
+        font-size: 2rem;
+    }
+
+    .reading-text {
+        font-size: 1.1rem;
+    }
+}
