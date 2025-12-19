@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # E-Library System
 
 A containerized library management system built with **Spring Boot** (backend) and **React** (frontend), featuring Docker Compose for simplified local development and CI/CD pipeline with GitHub Actions.
